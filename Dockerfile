@@ -6,11 +6,11 @@ RUN [ "cross-build-start" ]
 
 #labeling
 LABEL maintainer="netpi@hilscher.com" \
-      version="V0.9.1.0" \
+      version="V0.9.2" \
       description="Debian Stretch with Mosquitto MQTT broker"
 
 #version
-ENV HILSCHERNETPI_MOSQUITTO_MQTT_BROKER 0.9.1.0
+ENV HILSCHERNETPI_MOSQUITTO_MQTT_BROKER 0.9.2
 
 #copy files
 COPY "./init.d/*" /etc/init.d/
@@ -38,6 +38,9 @@ RUN apt-get update \
     && apt-get -yqq autoremove \
     && apt-get -y clean \
     && rm -rf /var/lib/apt/lists/*
+
+#do ports
+EXPOSE 1880 8883
 
 #do startscript
 ENTRYPOINT ["/etc/init.d/entrypoint.sh"]
