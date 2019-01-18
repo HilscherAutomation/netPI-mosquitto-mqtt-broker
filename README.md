@@ -2,11 +2,11 @@
 
 Made for [netPI](https://www.netiot.com/netpi/), the Raspberry Pi 3B Architecture based industrial suited Open Edge Connectivity Ecosystem
 
-### Debian Stretch with Mosquitto MQTT message server(broker)
+### Debian with Mosquitto MQTT message server(broker)
 
-The image provided hereunder deploys a container with installed Debian Stretch and a Mosquitto MQTT server. This makes it suitable for handling the "Internet of Things" message protocol MQTT as a broker. MQTT clients on localhost or local area networks can use this broker for message distribution in the publish/subscribe model based manner.
+The image provided hereunder deploys a container with installed Debian and a Mosquitto MQTT server. This makes it suitable for handling the "Internet of Things" message protocol MQTT as a broker. MQTT clients on localhost or local area networks can use this broker for message distribution in the publish/subscribe model based manner.
 
-Base of this image builds a tagged version of [debian:stretch](https://www.balena.io/docs/reference/base-images/base-images/) and the [Mosquitto](https://mosquitto.org/) MQTT server in the version V1.4.14 supporting the MQTT protocol versions 3.1 and 3.1.1.
+Base of this image builds [debian](https://www.balena.io/docs/reference/base-images/base-images/) and the [Mosquitto](https://mosquitto.org/) MQTT server in the version V1.4.14 supporting the MQTT protocol versions 3.1 and 3.1.1.
 
 #### Container prerequisites
 
