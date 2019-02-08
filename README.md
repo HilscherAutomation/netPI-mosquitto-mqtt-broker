@@ -21,7 +21,7 @@ If the containerized MQTT server is used for message transactions of localhost M
 
 #### Getting started
 
-STEP 1. Open netPI's landing page under `https://<netpi's ip address>`.
+STEP 1. Open netPI's website in your browser (https).
 
 STEP 2. Click the Docker tile to open the [Portainer.io](http://portainer.io/) Docker management user interface.
 
