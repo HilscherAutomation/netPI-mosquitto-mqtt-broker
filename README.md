@@ -1,5 +1,10 @@
 ## Mosquitto MQTT broker
 
+[![](https://images.microbadger.com/badges/image/hilschernetpi/netpi-mosquitto-mqtt-broker.svg)](https://microbadger.com/images/hilschernetpi/netpi-mosquitto-mqtt-broker "Mosquitto MQTT Broker")
+[![](https://images.microbadger.com/badges/commit/hilschernetpi/netpi-mosquitto-mqtt-broker.svg)](https://microbadger.com/images/hilschernetpi//netpi-mosquitto-mqtt-broker "Mosquitto MQTT Broker")
+[![Docker Registry](https://img.shields.io/docker/pulls/hilschernetpi/netpi-mosquitto-mqtt-broker.svg)](https://registry.hub.docker.com/u/hilschernetpi/netpi-mosquitto-mqtt-broker/)&nbsp;
+[![Image last updated](https://img.shields.io/badge/dynamic/json.svg?url=https://api.microbadger.com/v1/images/hilschernetpi/netpi-mosquitto-mqtt-broker&label=Image%20last%20updated&query=$.LastUpdated&colorB=007ec6)](http://microbadger.com/images/hilschernetpi/netpi-mosquitto-mqtt-broker "Image last updated")&nbsp;
+
 Made for [netPI](https://www.netiot.com/netpi/), the Raspberry Pi 3B Architecture based industrial suited Open Edge Connectivity Ecosystem
 
 ### Debian with Mosquitto MQTT message server(broker)
@@ -20,31 +25,24 @@ STEP 1. Open netPI's landing page under `https://<netpi's ip address>`.
 
 STEP 2. Click the Docker tile to open the [Portainer.io](http://portainer.io/) Docker management user interface.
 
-STEP 3. Enter the following parameters under **Containers > Add Container**
+STEP 3. Enter the following parameters under *Containers > + Add Container*
 
-* **Image**: `hilschernetpi/netpi-mosquitto-mqtt-broker`
+Parameter | Value | Remark
+:---------|:------ |:------
+*Image* | **hilschernetpi/netpi-mosquitto-mqtt-broker**
+*Port mapping* | *host* **1883** -> *container* **1883** | *host*=any unused
+*Port mapping* | *host* **8883** -> *container* **8883** | *host*=any unused
+*Restart policy* | **always**
 
-* **Port mapping**: `Host "1883" (any unused one) -> Container "1883"` `Host "8883" (any unused one) -> Container "8883"` 
+STEP 4. Press the button *Actions > Start/Deploy container*
 
-* **Restart policy"** : `always`
-
-STEP 4. Press the button **Actions > Start/Deploy container**
-
-Pulling the image may take a while (5-10mins). Sometimes it takes so long that a time out is indicated. In this case repeat the **Actions > Start/Deploy container** action.
-
-#### Accessing
-
-The container starts Mosquitto daemon automatically.
-
-Start your clients and publish/subscribe your topics and messages as usual.
+Pulling the image may take a while (5-10mins). Sometimes it may take too long and a time out is indicated. In this case repeat STEP 4.
 
 #### Accessing
 
-The container starts the SSH server automatically when started. Open a terminal connection to it with an SSH client such as [putty](http://www.putty.org/) using netPI's IP address at your mapped port.
+The container starts Mosquitto daemon automatically when started.
 
-As with a Raspberry Pi use the default credentials `pi` as user and `raspberry` as password when asked and you are logged in as non-root user `pi`.
-
-Continue to use [Linux commands](https://www.raspberrypi.org/documentation/linux/usage/commands.md) in the terminal as usual.
+Start your clients, let them know netPI's IP address and publish/subscribe your topics and messages as usual across the broker.
 
 #### Automated build
 
